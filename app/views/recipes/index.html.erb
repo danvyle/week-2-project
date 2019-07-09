@@ -1,3 +1,13 @@
+
+<%= form_tag("recipes/search") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+
 <% @recipes.each do |recipe| %>
   <%= recipe.title %>
   <%end%>
+
+ 

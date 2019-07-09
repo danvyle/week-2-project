@@ -9,24 +9,46 @@
 # RestClient.get("https://www.food2fork.com/api/search?key=#{API_KEY}&q=#{input}") #input by ingredient
 # parsed_recipes = JSON.parse(recipe)
 #
-# # def get_recipes(input)
-#     recipe = RestClient.get("https://www.food2fork.com/api/search?key=#{API_KEY}&q=chicken") #input by ingredient
+# def get_recipes(input)
+#     recipe = RestClient.get("https://www.food2fork.com/api/search?key=#{API_KEY}&q=#{input}") #input by ingredient
 #     parsed_recipes = JSON.parse(recipe)
-#
+
 #     inputID = parsed_recipes["recipes"][0]["recipe_id"]
-#
+
 #     recipeID = RestClient.get("https://www.food2fork.com/api/get?key=#{API_KEY}&rId=#{inputID}")#input recipe id to look up ingredients
 #     parsed_recipesID = JSON.parse(recipeID)
-#
+
 #     ingredientID = parsed_recipesID["recipe"]["ingredients"].join(",")
 #     parsed_recipes["recipes"].each do |recipe|
 #     recipe_1 = Recipe.new(name: recipe["title"], ingredients:ingredientID)
 #     recipe_1.save
-#
+
 #     end
 # end
 # get_recipes
 
+# User.delete_all
+# Like.delete_all
+# Favorite.delete_all
+# Recipe.delete_all
+# Ingredient.delete_all
+
 10.times do
-  Ingredient.create(description: Faker::Food.ingredient, calorie: (13..500).to_a.sample)
+  User.create(username: Faker::Name.last_name)
+end
+
+10.times do
+  Like.create(user_id: (1..10).to_a.sample, recipe_id: (1..10).to_a.sample)
+end
+
+10.times do
+  Favorite.create(user_id: (1..10).to_a.sample, recipe_id: (1..10).to_a.sample)
+end
+
+10.times do
+  Recipe.create(title: Faker::Food.dish, source_url: nil, image_url: nil, user_id: (1..10).to_a.sample)
+end
+
+10.times do
+  Ingredient.create(description: Faker::Food.ingredient, calorie: (13..500).to_a.sample, recipe_id: (1..10).to_a.sample)
 end

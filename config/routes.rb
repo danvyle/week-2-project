@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'recipes/search', to: 'recipes#show', as: "search"
+  get 'recipes/search', to: 'recipes#search', as: "search"
+  post 'search', to: 'recipes#search_results'
   resources :ingredients
   resources :recipes
   resources :favorites

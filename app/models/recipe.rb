@@ -7,7 +7,6 @@ class Recipe < ApplicationRecord
   has_many :ingredients
 
   def self.get_recipes(input)
-        byebug
         recipe = RestClient.get("https://www.food2fork.com/api/search?key=#{API_KEY}&q=#{input}") #input by ingredient
         parsed_recipes = JSON.parse(recipe)
     
@@ -17,9 +16,13 @@ class Recipe < ApplicationRecord
         parsed_recipesID = JSON.parse(recipeID)
     
         ingredientID = parsed_recipesID["recipe"]["ingredients"]
+        sourceUrl = parsed_recipesID["recipe"]["source_url"]
+        imgUrl = parsed_recipesID["recipe"]["image_url"]
+        
         parsed_recipes["recipes"].each do |recipe|
-        recipe_1 = Recipe.new(title: recipe["title"], ingredients:ingredientID)
-        recipe_1.save
+          byebug
+          recipeTest = Recipe.create(title: recipe["title"], source_url:sourceUrl, image_url:imgUrl, user:User.first)
+          ingredientTest = Ingredient.create(description:ingredientID, calorie: nil, recipe: recipeTest)
         end
     end
 end

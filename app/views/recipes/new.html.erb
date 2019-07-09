@@ -6,9 +6,6 @@
 <br>
 <%= f.label "choose ingredients"%>
 <br>
-<% @ingredients.each do |ingredient| %>
-<%= f.check_box :ingredients, { multiple: true }, ingredient, false %>
-<%= f.label ingredient.description%>
-    <% end %>
-<%= f.submit %>
-<%end%>
+<% @recipe.ingredients.each do |ingredient| %>
+  <%= f.check_box :ingredients, { multiple: true }, @ingredient, false %>
+<% end %>

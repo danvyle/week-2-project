@@ -1,10 +1,12 @@
-require_relative '/Users/renierdelacruz/Desktop/week-2-project/config/environment.rb'
+require_relative './config/environment'
 
 class Recipe < ApplicationRecord
   belongs_to :user
   has_many :likes
   has_many :favorites
   has_many :ingredients
+
+  validates :title, uniqueness: true
 
   def self.get_recipes(input)
         recipe = RestClient.get("https://www.food2fork.com/api/search?key=#{API_KEY}&q=#{input}") #input by ingredient
@@ -26,3 +28,5 @@ class Recipe < ApplicationRecord
         end
     end
 end
+
+

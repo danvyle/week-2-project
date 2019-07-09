@@ -3,11 +3,9 @@
   <%= label_tag(:q, "Search for:") %>
   <%= text_field_tag(:q) %>
   <%= submit_tag("Search") %>
-<% end %>
+<% end %><br>
 
-Recipes :
+
 <% @recipes.each do |recipe| %>
-  <%= recipe.title %>
-  <%end%>
-
- 
+  <%= link_to recipe.title, recipe_path(recipe)%><br>
+  <% end %>

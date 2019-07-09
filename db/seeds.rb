@@ -37,18 +37,18 @@
 #   User.create(username: Faker::Name.last_name)
 # end
 
-# 10.times do
-#   Like.create(user_id: (1..10).to_a.sample, recipe_id: (1..10).to_a.sample)
-# end
+10.times do
+  Recipe.create(title: Faker::Food.dish, source_url: nil, image_url: nil, user_id: (1..10).to_a.sample)
+end
 
-# 10.times do
-#   Favorite.create(user_id: (1..10).to_a.sample, recipe_id: (1..10).to_a.sample)
-# end
+10.times do
+  Like.create(recipe_id: (1..10).to_a.sample, user_id: (1..10).to_a.sample)
+end
 
-# 10.times do
-#   Recipe.create(title: Faker::Food.dish, source_url: nil, image_url: nil, user_id: (1..10).to_a.sample)
-# end
+10.times do
+  Favorite.create(recipe_id: (1..10).to_a.sample, user_id: (1..10).to_a.sample)
+end
 
-# 10.times do
-#   Ingredient.create(description: Faker::Food.ingredient, calorie: (13..500).to_a.sample, recipe_id: (1..10).to_a.sample)
-# end
+40.times do
+  Ingredient.create(description: Faker::Food.ingredient, calorie: (13..500).to_a.sample, recipe_id: (1..10).to_a.sample)
+end

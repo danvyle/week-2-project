@@ -4,7 +4,9 @@ class Recipe < ApplicationRecord
   belongs_to :user
   has_many :likes
   has_many :favorites
-  has_many :ingredients
+  has_many :ingredients_recipes
+  has_many :ingredients, through: :ingredients_recipes
+  accepts_nested_attributes_for :ingredients
 
   validates :title, uniqueness: true
 

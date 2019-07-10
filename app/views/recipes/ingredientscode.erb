@@ -1,0 +1,5 @@
+<%= f.label "choose ingredients"%><br>
+  <% @ingredients.each do |ingredient| %>
+    <%= f.check_box :ingredients, { multiple: true }, ingredient, false %>
+    <%= ingredient.description %>
+  <% end %><br>

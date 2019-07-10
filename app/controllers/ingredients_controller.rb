@@ -11,8 +11,11 @@ class IngredientsController < ApplicationController
     end
 
     def create
+      # @recipe = Recipe.find(params[:id])
+
       @ingredient = Ingredient.new(ingredient_params)
         if @ingredient.save
+          byebug
           redirect_to ingredient_path(@ingredient)
         else
           render :new

@@ -16,15 +16,14 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @current_user = user_id 
-    @recipe = Recipe.new(recipe_params)
-      if @recipe.save
-        redirect_to recipe_path(@recipe)
-      else
-        render :new
-      end
+    @ingredients = Ingredient.all
+    @current_user = current_user.id
+    input = {title: params["recipe"]["title"], user_id: @current_user, image_url: params["recipe"]["image_url"], source_url: params["recipe"]["source_url"], ingredient_ids: params["recipe"]["ingredient_ids"]}
+    byebug
+    @recipe = Recipe.new(input)
+      @recipe.save
+      redirect_to recipe_path(@recipe)
   end
-
 
   def update
     @recipe.update(recipe_params)
@@ -49,7 +48,11 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:title, :user_id, :source_url, :image_url)
+    params.require(:recipe).permit(:title, :user_id, :source_url, :image_url, ingredient_ids:[])
+  end
+
+  def create_ingredient
+    # Ingredient.find_by_id(ingredient_id: )
   end
 
 end

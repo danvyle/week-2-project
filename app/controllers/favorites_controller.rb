@@ -8,7 +8,7 @@ class FavoritesController < ApplicationController
     #
 
     def create
-      @user = current_user.id
+      @user = user.id
       @recipe = params[:recipe_id]
       favorites = {user_id: @user, recipe_id: @recipe}
       @favorite = Favorite.new(favorites)

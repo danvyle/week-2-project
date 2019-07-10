@@ -7,7 +7,7 @@ class LikesController < ApplicationController
   #
 
   def create
-    @user = current_user.id
+    @user = user.id
     @recipe = params[:recipe_id]
     likes = {user_id: @user, recipe_id: @recipe}
     @like = Like.new(likes)

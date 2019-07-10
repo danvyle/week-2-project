@@ -5,7 +5,7 @@ class AuthController < ApplicationController
   def create
     user = User.find_by(username: params[:auth][:username])
     if user && user.authenticate(params[:auth][:password])
-      session[:user_id] = user.id
+      session[:user_id] = @user.id
       redirect_to users_path
     else
       render :new

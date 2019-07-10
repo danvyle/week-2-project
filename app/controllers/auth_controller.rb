@@ -1,6 +1,5 @@
 class AuthController < ApplicationController
-
-
+  
   def new
   end
 
@@ -23,5 +22,4 @@ class AuthController < ApplicationController
   def session_params
     params.require(:auth).permit(:username, :password)
   end
-
 end

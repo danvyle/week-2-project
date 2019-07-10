@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :redirect_user
 
   def index
     @recipes = Recipe.all
@@ -15,6 +16,7 @@ class RecipesController < ApplicationController
   end
 
   def create
+    @current_user = user_id 
     @recipe = Recipe.new(recipe_params)
       if @recipe.save
         redirect_to recipe_path(@recipe)
@@ -47,7 +49,7 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:name, :user_id)
+    params.require(:recipe).permit(:title, :user_id, :source_url, :image_url)
   end
 
 end

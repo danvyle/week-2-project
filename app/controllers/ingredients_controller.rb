@@ -1,5 +1,6 @@
 class IngredientsController < ApplicationController
     before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
+    before_action :redirect_user
 
     def index
       @ingredients = Ingredient.all

@@ -1,5 +1,5 @@
 class FavoritesController < ApplicationController
-
+before_action :redirect_user
     # before_action :set_favorite, only: [:show, :edit, :create, :update]
     #
     def index
@@ -8,13 +8,17 @@ class FavoritesController < ApplicationController
     #
 
     def create
-      @favorite = Favorite.new(favorite_params)
+      @current_user = current_user.id
+      @recipe = params[:recipe_id]
+      input = {user_id: @current_user, recipe_id: @recipe}
+      @favorite = Favorite.new(input)
       if @favorite.save
         redirect_to recipe_path(@recipe)
       else
-       render :recipe_path(@recipe)
+        render :new
       end
     end
+
 
     #
     # def update

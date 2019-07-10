@@ -2,8 +2,8 @@
 <h4>Ingredients: <% @recipe.ingredients.each do |ingredient| %></h4>
 <%= ingredient.description %><br>
 <% end %>
-<h4>Source URL : <%= link_to @recipe.source_url%><br></h4>
-<%= link_to href: @recipe.source_url do %>
+<h4>Click on picture to be taken to recipe!</h4>
+<%= link_to @recipe.source_url do %>
     <%= image_tag @recipe.image_url%>
 <% end %>
 

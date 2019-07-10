@@ -1,8 +1,13 @@
 <h2><%= @recipe.title %></h2>
 <h4>Ingredients: <% @recipe.ingredients.each do |ingredient| %></h4>
-<br>
 <%= ingredient.description %><br>
-<% end %><br>
+<% end %>
+<h4>Source URL : <%= link_to @recipe.source_url%><br></h4>
+<%= link_to href: @recipe.source_url do %>
+    <%= image_tag @recipe.image_url%>
+<% end %>
+
+<br>
 <%= @recipe.likes.count %>
 <%= button_to 'Like', recipe_likes_path(@recipe), method: :post %><br>
 

@@ -1,14 +1,14 @@
 <%= form_for @recipe do |f| %>
 <%= f.label :title %>
-<%= f.text_field :title %>
+<%= f.text_field :title %><br>
 <%= f.label :user_id %>
-<%= f.text_field :user_id %>
+<%= f.text_field :user_id %><br>
 <br>
 <%= f.label "choose ingredients"%>
 <br>
-<% @ingredients.each do |ingredient| %>
-<%= f.check_box :ingredients, { multiple: true }, ingredient, false %>
-<%= f.label ingredient.description%>
+<% @recipe.ingredients.each do |ingredient| %>
+<%= f.check_box :ingredients, { multiple: true }, ingredient, false %><br>
+<%= f.label ingredient.description%><br>
     <% end %>
 <%= f.submit %>
 <%end%>

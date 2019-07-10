@@ -6,19 +6,21 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @ingredients = Ingredient.all
+    # @ingredient = Ingredient.find(params[:id])
     @recipe = Recipe.new
   end
 
+  def show
+  end
+
   def create
-    
     @recipe = Recipe.new(recipe_params)
       if @recipe.save
         redirect_to recipe_path(@recipe)
       else
         render :new
       end
-    end
+  end
 
 
   def update
@@ -37,8 +39,9 @@ class RecipesController < ApplicationController
   def search_results
     Recipe.get_recipes(params[:q])
   end
+
   private
-  
+
   def set_recipe
     @recipe = Recipe.find(params[:id])
   end

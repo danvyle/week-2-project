@@ -1,4 +1,4 @@
-require_relative './config/environment'
+require './config/environment'
 
 class Recipe < ApplicationRecord
   belongs_to :user
@@ -13,7 +13,7 @@ class Recipe < ApplicationRecord
         parsed_recipes = JSON.parse(recipe)
     
         inputID = parsed_recipes["recipes"][0]["recipe_id"]
-    
+        byebug
         recipeID = RestClient.get("https://www.food2fork.com/api/get?key=#{API_KEY}&rId=#{inputID}")#input recipe id to look up ingredients
         parsed_recipesID = JSON.parse(recipeID)
     
@@ -22,8 +22,8 @@ class Recipe < ApplicationRecord
         imgUrl = parsed_recipesID["recipe"]["image_url"]
         
         parsed_recipes["recipes"].each do |recipe|
-          byebug
-          recipeTest = Recipe.create(title: recipe["title"], source_url:sourceUrl, image_url:imgUrl, user:User.first)
+  
+          recipeTest = Recipe.create(title: recipe["title"], source_url:sourceUrl, image_url:imgUrl, user: User.first)
           ingredientTest = Ingredient.create(description:ingredientID, calorie: nil, recipe: recipeTest)
         end
     end

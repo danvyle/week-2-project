@@ -33,12 +33,12 @@ class RecipesController < ApplicationController
     redirect_to recipes_path
   end
 
-  # def search
-  # end
-  #
-  # def search_results
-  #   Recipe.get_recipes(params[:q])
-  # end
+  def search
+  end
+  
+  def search_results
+    Recipe.get_recipes(params[:q])
+  end
   private
 
   def set_recipe

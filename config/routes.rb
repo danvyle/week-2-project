@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   # get 'recipes/search', to: 'recipes#search', as: "search"
   # post 'search', to: 'recipes#search_results'
+  get '/signup', to: "users#new"
+  get '/login', to: "auth#new"
+  post '/login', to:"auth#create"
+  delete '/login', to:"auth#destroy"
   resources :users
   resources :recipes do
     resources :likes

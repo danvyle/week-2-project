@@ -1,2 +1,5 @@
-<%= @ingredient.description%>
-<%= @ingredient.calorie%>
+<h3><%= @ingredient.description%></h3>
+Calories:<%= @ingredient.calorie%><br>
+
+Featured recipes:<%= @ingredient.recipe.title%><br>
+<%= link_to @ingredient.recipe.title, recipe_path(@ingredient.recipe) %>

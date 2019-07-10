@@ -8,15 +8,11 @@ class FavoritesController < ApplicationController
     #
 
     def create
-      @user = current_user.id
-      @recipe = params[:recipe_id]
-      favorites = {user_id: @user, recipe_id: @recipe}
-      @favorite = Favorite.new(favorites)
-      @favorite.save!
+      @favorite = Favorite.new(favorite_params)
       if @favorite.save
-        redirect_to user_path(@user)
+        redirect_to recipe_path(@recipe)
       else
-       redirect_to recipe_path
+       render :recipe_path(@recipe)
       end
     end
 

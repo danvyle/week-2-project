@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   resources :recipes do
     resources :likes
   end
+  resources :recipes do
+    resources :favorites
+  end
   resources :ingredients
   resources :favorites
   resources :likes

@@ -8,8 +8,10 @@
 <% end %>
 
 <br>
-<%= @recipe.likes.count %>
-<%= button_to 'Like', recipe_likes_path(@recipe), method: :post %><br>
+<%= @recipe.likes.count %> Likes
+<%= @recipe.favorites.count %> Favorites
+<%= button_to 'Like', recipe_likes_path(@recipe), method: :post %>
+<%= button_to 'Favorite', recipe_favorites_path(@recipe), method: :post %><br>
 
 <%= button_to "Edit Recipe", edit_recipe_path(@recipe)%>
 <%= button_to "Delete", @recipe, method: :delete%>

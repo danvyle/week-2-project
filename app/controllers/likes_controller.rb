@@ -7,15 +7,11 @@ class LikesController < ApplicationController
   #
 
   def create
-    @user = current_user.id
-    @recipe = params[:recipe_id]
-    likes = {user_id: @user, recipe_id: @recipe}
-    @like = Like.new(likes)
-    @like.save!
+    @like = Like.new(like_params)
     if @like.save
-      redirect_to user_path(@user)
+      redirect_to recipe_path(@recipe)
     else
-     redirect_to recipe_path
+     render :new
     end
   end
 

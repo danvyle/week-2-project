@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update, :destroy]
-  before_action :redirect_user
+  before_action :redirect_user,  except: [:new, :create]
   
   def index
     @users = User.all

@@ -2,62 +2,43 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// body {
-//   margin: 0;
-//   font-family: 'Montserrat', sans-serif;
-//   font-family: 'Roboto', sans-serif;
-//   font-style: 'Light';
-//   background-image: url("background.jpg");
-//   background-color: #cccccc;
-//   opacity: 0.5
-// }
+.header {
+    z-index: 50;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: white;
+    min-height: 60px;
+    color: #FE422D;
+    box-shadow: 0 0 10px
+}
 
-// img {
-//   opacity: 0.5
-// }
+.header .header-container {
+    margin: 0px 32px;
+    padding-top: 10px;
+    padding-bottom: 7px;
+    position: relative;
+    z-index: 1;
+}
 
-// .topnav {
-//   overflow: hidden;
-//   background-color: white;
-// }
+.menu-wrapper {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 15px;
+}
 
-// .topnav a {
-//   float: right;
-//   color: #f2f2f2;
-//   text-align: center;
-//   padding: 10px 25px;
-//   text-decoration: none;
-//   font-size: 17px;
-// }
+.login-container {
+    background: none;
+    padding: 0;
+    background-attachment: fixed;
+    
+}
 
-// .topnav a:hover {
-//   background-color: lightness($color: #000000);
-//   color: black;
-// }
-
-// .topnav a.active {
-//   color: red;
-// }
-
-.item-a {
-    grid-area: header;
-  }
-  .item-b {
-    grid-area: main;
-  }
-  .item-c {
-    grid-area: sidebar;
-  }
-  .item-d {
-    grid-area: footer;
-  }
+body {
+  font-family: 'Helvetica Neue', Helvetica;
+  font-size: 14px;
+  font-style: 'Light';
+  line-height: 1.4;
   
-  .container {
-    display: grid;
-    grid-template-columns: 50px 50px 50px 50px;
-    grid-template-rows: auto;
-    grid-template-areas: 
-      "header header header header"
-      "main main . sidebar"
-      "footer footer footer footer";
-  }
+}

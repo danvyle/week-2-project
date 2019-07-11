@@ -15,7 +15,6 @@ class IngredientsController < ApplicationController
 
       @ingredient = Ingredient.new(ingredient_params)
         if @ingredient.save
-          byebug
           redirect_to ingredient_path(@ingredient)
         else
           render :new

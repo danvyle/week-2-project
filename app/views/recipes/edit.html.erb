@@ -1,9 +1,11 @@
 <%= form_for @recipe do |f| %>
 <%= f.label :title %>
 <%= f.text_field :title %><br>
-  <%= f.label :image_url %>
-  <%= f.text_field :image_url %><br>
-  <%= f.label :source_url %>
-  <%= f.text_field :source_url %><br>
+<%= f.label "choose ingredients"%><br>
+<%= f.collection_check_boxes(:ingredient_ids, Ingredient.all, :id, :description) %>
+<%= f.label :image_url %>
+<%= f.text_field :image_url %><br>
+<%= f.label :source_url %>
+<%= f.text_field :source_url %><br>
 <%= f.submit %>
 <% end %>

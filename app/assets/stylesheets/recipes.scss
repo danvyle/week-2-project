@@ -3,24 +3,21 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-
 .container {
   display: grid;
   justify-content: flex-start;
   align-items: flex-start;
 }
 
-header {
-  background: blue;
-  grid-column: 100%;
-  max-height: 80px;
-}
-
-.recipe_container_card {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-
+.header {
+    z-index: 50;
+    width: 100%;
+    // position: fixed;
+    top: 0;
+    background-color: white;
+    min-height: 50px;
+    color: #FE422D;
+    box-shadow: 0 0 10px;
 }
 
 .fave_recipe_card {

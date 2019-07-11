@@ -1,4 +1,36 @@
-<%= @user.username %>
+Hi <%= @user.username %>! <br>
+
+<h1>Here are your recipes:<%= @user.recipes.count %></h1>
+<% @user.recipes.each do |recipe| %>
+  <%= link_to recipe.title, recipe_path(recipe) %><br>
+<% end %>
+<br>
+
+
+<h1>Your liked recipes: <%= @user.likes.count %> </h1>
+<% @user.likes.each do |like| %>
+  <% recipe = Recipe.find_by_id(like.recipe_id) %>
+  <%= link_to recipe.title, recipe_path(recipe) %><br>
+<% end %>
+
+
+<h1>Your faved recipes: <%= @user.favorites.count %></h1>
+<% @user.favorites.each do |favorite| %>
+  <% recipe = Recipe.find_by_id(favorite.recipe_id) %>
+  <%= link_to recipe.title, recipe_path(recipe) %><br>
+<% end %>
+
+
+<h1>Here are your ingredients to your favorited recipes!</h1>
+
+<% @user.favorites.each do |favorite| %>
+  <% recipe = Recipe.find_by_id(favorite.recipe_id) %>
+    <% recipe.ingredients.each do |item| %>
+      <%= item.description %><br>
+    <% end %>
+<% end %>
+
+
 <%= link_to "Change Password", edit_user_path(@user)%>
 <%= link_to "Log out", login_path, method: :delete %>
 <%= link_to "Delete", @user, method: :delete%>

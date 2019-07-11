@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update, :destroy]
-  before_action :redirect_user, except: [:new, :create]
+  before_action :redirect_user, only: [:index, :show, :edit]
   # before_action :redirect_user
 
   def index
@@ -30,6 +30,16 @@ class UsersController < ApplicationController
     @user.delete
     redirect_to users_path
   end
+#
+# def user_favorites
+#  @user.favorites.each do |favorites|
+#    recipe = Recipe.find_by(favorites.recipe_id)
+#      recipe.ingredient.each do |item|
+#          item.description
+#         binding.pry
+#      end
+#  end
+# end
 
   private
 

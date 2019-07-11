@@ -1,3 +1,63 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// body {
+//   margin: 0;
+//   font-family: 'Montserrat', sans-serif;
+//   font-family: 'Roboto', sans-serif;
+//   font-style: 'Light';
+//   background-image: url("background.jpg");
+//   background-color: #cccccc;
+//   opacity: 0.5
+// }
+
+// img {
+//   opacity: 0.5
+// }
+
+// .topnav {
+//   overflow: hidden;
+//   background-color: white;
+// }
+
+// .topnav a {
+//   float: right;
+//   color: #f2f2f2;
+//   text-align: center;
+//   padding: 10px 25px;
+//   text-decoration: none;
+//   font-size: 17px;
+// }
+
+// .topnav a:hover {
+//   background-color: lightness($color: #000000);
+//   color: black;
+// }
+
+// .topnav a.active {
+//   color: red;
+// }
+
+.item-a {
+    grid-area: header;
+  }
+  .item-b {
+    grid-area: main;
+  }
+  .item-c {
+    grid-area: sidebar;
+  }
+  .item-d {
+    grid-area: footer;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-columns: 50px 50px 50px 50px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "header header header header"
+      "main main . sidebar"
+      "footer footer footer footer";
+  }

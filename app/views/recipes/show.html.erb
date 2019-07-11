@@ -13,5 +13,5 @@
 <%= button_to 'Like', recipe_likes_path(@recipe), method: :post %>
 <%= button_to 'Favorite', recipe_favorites_path(@recipe), method: :post %><br>
 
-<%= button_to "Edit Recipe", edit_recipe_path(@recipe)%>
+<%= button_to "Edit Recipe", edit_recipe_path(@recipe), :method => :get%>
 <%= button_to "Delete", @recipe, method: :delete%>

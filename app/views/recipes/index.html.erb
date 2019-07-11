@@ -8,6 +8,7 @@
   </head>
 
   <body>
+<<<<<<< HEAD
     <div class="header">
       <div class="header-container">
         <div class="menu-wrapper">
@@ -19,23 +20,52 @@
         </div>
       </div>
     </div>
+=======
+    <div class="container">
+      <header>
+        <%= form_tag("/search") do %>
+          <%= label_tag(:q, "Search for:") %>
+          <%= text_field_tag(:q) %>
+          <%= submit_tag("Search") %>
+        <% end %><br>
+      </header>
+>>>>>>> 62ad2e1c0feba7ca66b1cf973144ac61e65443b5
 
-
-
+<h2>Featured Recipe Results</h2>
         <div class="recipe_container_card">
           <% @recipes.each_with_index do |recipe, i| %>
           <% break if i == 5; %>
+<<<<<<< HEAD
           <div class="polaroid">
             <img src=<%= recipe.image_url %> <br><%= link_to recipe.title, recipe_path(recipe) %><br>
           </div>
           <div class="container">
           </div>
+=======
+            <div class="polaroid">
+              <img src=<%= recipe.image_url %>><br>
+              <%= link_to recipe.title, recipe_path(recipe) %>
+            </div>
+            <div class="container">
+        </div>
+>>>>>>> 62ad2e1c0feba7ca66b1cf973144ac61e65443b5
           <%end%><br>
         </div>
     </div>
 
+    <h2>Most Favorited Recipe</h2>
+      <div class="fave_recipe_card">
+        <% Recipe.most_likes.each do |recipe| %>
+      <div class="polaroidrow2">
+        <img src=<%= recipe.image_url %>><br>
+        <%= link_to recipe.title, recipe_path(recipe) %>
+      </div>
+      <div class="container">
 
-    </div>
+      </div>
+        <% end %><br>
+      </div>
+    
   </body>
 
 </html>

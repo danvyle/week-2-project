@@ -20,19 +20,10 @@ class Recipe < ApplicationRecord
   end
 
   def self.most_likes
-    # new_arr = []
-    # self.all.each do |recipe|
-    #   likes = recipe.likes
-    #   new_arr << {recipe.title => likes.count}
-    # end
-    # sorted_array = new_arr.sort_by do  |key,value|
-    #   byebug
-    #   value
-    # end
     self.left_joins(:likes)
     .group(:id)
     .order('COUNT(likes.id) DESC')
-    .limit(1)
+    .limit(5)
   end
 
 

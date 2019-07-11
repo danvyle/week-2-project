@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 62ad2e1c0feba7ca66b1cf973144ac61e65443b5
 .container {
   display: grid;
   justify-content: flex-start;
@@ -29,6 +33,12 @@
 
 }
 
+.fave_recipe_card {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+
+}
 div.polaroid {
   width: 80%;
   background-color: white;
@@ -38,7 +48,24 @@ div.polaroid {
 .polaroid img {
     width: 150px;
     height: 150px;
-    border-radius: 8px;
+    opacity: 0.8;
+    width: 100%;
+  }
+
+div.container {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+div.polaroidrow2 {
+  width: 80%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.polaroidrow2 img {
+    width: 150px;
+    height: 150px;
     opacity: 0.8;
     width: 100%;
   }

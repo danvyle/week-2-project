@@ -6,6 +6,10 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
   end
 
+  def show
+    @ingredients = Ingredient.all
+  end
+
   def new
     @ingredients = Ingredient.all
     @recipe = Recipe.new
@@ -19,7 +23,6 @@ class RecipesController < ApplicationController
     @ingredients = Ingredient.all
     @current_user = current_user.id
     input = {title: params["recipe"]["title"], user_id: @current_user, image_url: params["recipe"]["image_url"], source_url: params["recipe"]["source_url"], ingredient_ids: params["recipe"]["ingredient_ids"]}
-    byebug
     @recipe = Recipe.new(input)
       @recipe.save
       redirect_to recipe_path(@recipe)
@@ -49,10 +52,6 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:title, :user_id, :source_url, :image_url, ingredient_ids:[])
-  end
-
-  def create_ingredient
-    # Ingredient.find_by_id(ingredient_id: )
   end
 
 end

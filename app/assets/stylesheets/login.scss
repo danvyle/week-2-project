@@ -12,6 +12,8 @@
     color: #FE422D;
     box-shadow: 0 0 10px;
     opacity: 0.9;
+    border-radius: 6px;
+    
 }
 
 .header .header-container {
@@ -20,6 +22,7 @@
     padding-bottom: 7px;
     position: relative;
     z-index: 1;
+    border-radius: 10px;
 }
 
 .menu-wrapper {
@@ -44,9 +47,11 @@
 
 .login-form {
     background-color: white;
-    border-radius: 0.5px;
+    border-radius: 8px;
     text-align: center;
     opacity: 0.8;
+    padding: 10px;
+    
 }
 
 .request-invite {

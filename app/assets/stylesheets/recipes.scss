@@ -1,3 +1,49 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.container {
+  display: grid;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.header {
+    z-index: 50;
+    width: 100%;
+    // position: fixed;
+    top: 0;
+    background-color: white;
+    min-height: 50px;
+    color: #FE422D;
+    box-shadow: 0 0 10px;
+    opacity: 0.9;
+    border-radius: 6px;
+}
+
+.recipe_container_card {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+
+}
+
+div.polaroid {
+  width: 80%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.polaroid img {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    opacity: 0.8;
+    width: 100%;
+  }
+
+div.container {
+  text-align: center;
+  padding: 10px 20px;
+}

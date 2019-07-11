@@ -1,13 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 
-<%= form_tag("/search") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
-<% end %><br>
+<%= stylesheet_link_tag "recipes.css" %>
+  <head>
+    <meta charset="utf-8">
+    <title>Recipes</title>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="header-container">
+        <div class="menu-wrapper">
+              <%= form_tag("/search") do %>
+              <%= label_tag(:q, "Search for:") %>
+              <%= text_field_tag(:q) %>
+              <%= submit_tag("Search") %>
+              <% end %><br>
+        </div>
+      </div>
+    </div>
 
 
-<% @recipes.each do |recipe| %>
-  <%= link_to recipe.title, recipe_path(recipe) %><br>
-<%end%>
 
-<h1><%= @recipes.most_likes.title %></h1>
+        <div class="recipe_container_card">
+          <% @recipes.each_with_index do |recipe, i| %>
+          <% break if i == 5; %>
+          <div class="polaroid">
+            <img src=<%= recipe.image_url %> <br><%= link_to recipe.title, recipe_path(recipe) %><br>
+          </div>
+          <div class="container">
+          </div>
+          <%end%><br>
+        </div>
+    </div>
+
+
+    </div>
+  </body>
+
+</html>

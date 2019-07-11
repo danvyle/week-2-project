@@ -1,13 +1,51 @@
+<!DOCTYPE html>
+<html>
+<%= stylesheet_link_tag"users.css" %>
 
-<%= form_for :auth, url: '/login' do |f| %>
-<%= f.label :username %>
-<%= f.text_field :username %>
-<%= f.label :password %>
-<%= f.text_field :password %>
-<%= f.submit "Login" %>
-<% end %>
+<head>
+</head>
+<body>
+<div class="header">
+  <div class="header-container">
+    <div class="menu-wrapper">
+      <a class="menu-button" href="/signup">
+        <i class="fa fa-sign-in fa-2x visible-xs"></i>
+        <span class="hidden-xs">Sign up</span>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="content">
+  <div class="login-container">
+    <div class="login-form">
+      <h4 class="title">Welcome back!</h4>
+      <div class="simple_form">
+        <%= form_for :auth, url: '/login' do |f| %>
+        <%= f.label :username %><br>
+        <%= f.text_field :username %><br>
+        <%= f.label :password %><br>
+        <%= f.text_field :password %><br>
+        <%= f.submit "Login" %><br>
+        <% end %>
+
+        <% if flash.now[:danger] %>
+        <h3><%= flash.now[:danger] %></h3>
+        <% end %>
+      </div>
+        <p class="request-invite">
+          Don't have an account?
+          <a href="signup">Sign up!</a>
+        </p>
+    </div>
+  </div>
+</div>
 
 
-<% if flash.now[:danger] %>
-<h3><%= flash.now[:danger] %></h3>
-<% end %>
+
+</body>
+</html>
+
+
+
+
+

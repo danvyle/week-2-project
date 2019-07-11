@@ -5,12 +5,13 @@
 .header {
     z-index: 50;
     width: 100%;
-    position: fixed;
+    // position: fixe;
     top: 0;
     background-color: white;
-    min-height: 60px;
+    min-height: 50px;
     color: #FE422D;
-    box-shadow: 0 0 10px
+    box-shadow: 0 0 10px;
+    opacity: 0.9;
 }
 
 .header .header-container {
@@ -32,7 +33,28 @@
     background: none;
     padding: 0;
     background-attachment: fixed;
-    
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: calc(100vh - 60px);
+}
+
+.login-form {
+    background-color: white;
+    border-radius: 0.5px;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.request-invite {
+    text-align: center;
+    color: #938E8D;
+    font-weight: 300;
+    font-size: 19px;
+    margin-top: 25px;
 }
 
 body {
@@ -40,5 +62,14 @@ body {
   font-size: 14px;
   font-style: 'Light';
   line-height: 1.4;
-  
+  background-image: url("background.jpg")
+
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+  opacity: 1;
+  width: fit-content;
+}
+

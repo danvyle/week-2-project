@@ -23,8 +23,12 @@
         <div class="recipe_container_card">
           <% @recipes.each_with_index do |recipe, i| %>
           <% break if i == 5; %>
-          <img src=<%= recipe.image_url %> alt="recipe.title"><br>
-          <%= link_to recipe.title, recipe_path(recipe) %><br>
+          <div class="polaroid">
+            <img src=<%= recipe.image_url %> alt="recipe.title"><br>
+          </div>
+          <div class="container">
+            <%= link_to recipe.title, recipe_path(recipe) %><br>
+          </div>
           <%end%><br>
         </div>
     </div>

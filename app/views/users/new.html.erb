@@ -1,10 +1,41 @@
+<%= stylesheet_link_tag"users.css" %>
 
-<%= form_for @user do |f| %>
-<%= f.label :username %>
-<%= f.text_field :username %>
-<%= f.label :password %>
-<%= f.text_field :password %>
-<%= f.label :password_confirmation %>
-<%= f.text_field :password_confirmation %>
-<%= f.submit "Save User"%>
-<%end%>
+<head>
+</head>
+<body class="userlogin">
+<div class="header">
+  <div class="header-container">
+    <div class="menu-wrapper">
+      <a class="menu-button" href="/login">
+        <i class="fa fa-sign-in fa-2x visible-xs"></i>
+        <span class="hidden-xs">Log in</span>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="content">
+  <div class="login-container">
+    <div class="login-form">
+      <h4 class="title">Welcome! <%=@user.username%></h4>
+      <div class="simple_form">
+            <%= form_for @user do |f| %>
+            <%= f.label :username %><br>
+            <%= f.text_field :username %><br>
+            <%= f.label :password %><br>
+            <%= f.text_field :password %><br>
+            <%= f.label :password_confirmation %><br>
+            <%= f.text_field :password_confirmation %><br>
+            <%= f.submit "Sign up"%>
+            <%end%>
+      </div>
+        <p class="request-invite">
+          Don't have an account?
+          <a href="login">Log in!</a>
+        </p>
+    </div>
+  </div>
+</div>
+
+
+
+</body>

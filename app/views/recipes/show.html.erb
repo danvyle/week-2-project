@@ -1,15 +1,16 @@
 <%= stylesheet_link_tag "recipeshow.css" %>
-
-
-<body class="userlogin">
+<body>
 <div class="header">
-  <div class="header-container">
-    <div class="menu-wrapper">
-      <a class="menu-button" href="/recipes">
-        <i class="fa fa-sign-in fa-2x visible-xs"></i>
-        <span class="hidden-xs">Home</span>
-      </a>
-      <a class="menu-button" href="/users/<%= current_user.id %>">
+    <div class="header-container">
+      <div class="header_logo">
+        <img src="../images/fulllogo.png">
+      </div>
+      <div class="menu-wrapper">
+        <a class="menu-button" href="/recipes">
+          <i class="fa fa-sign-in fa-2x visible-xs"></i>
+          <span class="hidden-xs">Home</span>
+          </a>
+          <a class="menu-button" href="/users/<%= current_user.id %>">
         <i class="fa fa-sign-in fa-2x visible-xs"></i>
         <span class="hidden-xs">Profile</span>
       </a>
@@ -18,29 +19,30 @@
     </div>
   </div>
 </div>
-
 <h2><%= @recipe.title %></h2>
-<h4>Ingredients: <% @recipe.ingredients.each do |ingredient| %></h4>
-<%= ingredient.description %><br>
-<% end %>
-<h4>Click on picture to be taken to its recipe!</h4>
-<%= link_to @recipe.source_url do %>
-    <%= image_tag @recipe.image_url%>
-<% end %>
-
 <div class="row">
   <div class="column">
+    <div class="recipe_buttons">
+      <%= button_to "Edit Recipe", edit_recipe_path(@recipe), :method => :get%>
+      <%= button_to "Delete", @recipe, method: :delete%>
+    </div>
     <%= link_to @recipe.source_url do %>
     <%= image_tag @recipe.image_url%>
     <% end %><br>
-    <%= @recipe.likes.count %> Likes
-    <%= @recipe.favorites.count %> Favorites
+
+
         <div class="buttons">
-        <%= button_to "👍", recipe_likes_path(@recipe), method: :post %>
-        <%= button_to "😍", recipe_favorites_path(@recipe), method: :post %>
-        <%= button_to "Edit Recipe", edit_recipe_path(@recipe), :method => :get%>
-        <%= button_to "Delete", @recipe, method: :delete%>
+          <%= button_to "👍", recipe_likes_path(@recipe), method: :post %>
+          <%= button_to "😍", recipe_favorites_path(@recipe), method: :post %> <br>
         </div>
+<br>
+<h3>This recipe has:</h3>
+<%= @recipe.likes.count %> Likes
+<%= @recipe.favorites.count %> Favorites
+<br>
+<br>
+
+
   </div>
 <div class="column">
     <h4>Ingredients:</h4>
@@ -49,12 +51,7 @@
     <% end %>
   </div>
 </div>
-
-
-
-
 <br>
-
-
-</div>
+<br>
+<!-- </div> -->
 </body>

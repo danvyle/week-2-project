@@ -6,10 +6,22 @@
     <title>Create Edit Recipe</title>
   </head>
   <body class ="newrecipe">
-
-<div class="header">
-
-</div>
+    <div class="header">
+      <div class="header-container">
+        <div class="menu-wrapper">
+          <a class="menu-button" href="/recipes">
+            <i class="fa fa-sign-in fa-2x visible-xs"></i>
+            <span class="hidden-xs">Home</span>
+          </a>
+          <a class="menu-button" href="/users/<%= current_user.id %>">
+            <i class="fa fa-sign-in fa-2x visible-xs"></i>
+            <span class="hidden-xs">Profile</span>
+          </a>
+          <a class="menu-button" <%= link_to "Log out", login_path, method: :delete %>
+          </a>
+        </div>
+      </div>
+    </div>
 
 
 <h1>Edit Your Recipe</h1>

@@ -13,7 +13,7 @@
     box-shadow: 0 0 10px;
     opacity: 0.9;
     border-radius: 6px;
-    
+
 }
 
 .header .header-container {
@@ -51,7 +51,7 @@
     text-align: center;
     opacity: 0.8;
     padding: 10px;
-    
+
 }
 
 .request-invite {
@@ -96,4 +96,34 @@ height: 300px;
 content: "";
 display: table;
 clear: both;
+}
+
+.recipe-cards {
+
+}
+
+
+.user_recipes {
+
+}
+
+.liked_favorited_recipes {
+
+}
+
+.ingredient_list {
+
+}
+
+.user_info-container {
+  background: none;
+  padding: 0;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: calc(100vh - 60px);
 }

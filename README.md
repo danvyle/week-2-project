@@ -7,3 +7,5 @@ Users can like recipes to let other users know they like their contributions, an
 On their user profile, users can see how many likes and favorites their recipes have gotten, change their password, or create a shopping list for all their favorited recipes.
 
 Users can search for recipes or find inspiration looking for recipes that are the most favorited on the site.
+
+Special thanks and credit to logomakr.com to allow us to design our logo.

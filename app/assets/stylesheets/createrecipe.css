@@ -1,0 +1,88 @@
+.header {
+    z-index: 50;
+    width: 100%;
+    // position: fixed;
+    top: 0;
+    background-color: white;
+    min-height: 50px;
+    color: tan;
+    box-shadow: 0 0 10px;
+    opacity: 6px;
+    border-radius: 6px;
+}
+
+.checkboxes {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(50px, auto);
+
+
+  /** need to figure out a way to present checkboxes better**/
+
+
+}
+
+.checkboxes > * {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  text-align: right;
+  padding: 0 10px 0 10px;
+}
+
+.newrecipe {
+  text-align: center;
+  font-family: 'Helvetica Neue', Helvetica;
+  font-size: 14px;
+  font-style: 'Light';
+  line-height: 1.4;
+  background-image: url("background_picnic.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.img_card img {
+    justify-content: center;
+    width: auto;
+    height: auto;
+    opacity: 0.8;
+    width:50%;
+    border: solid;
+    border-color: white;
+    border-width: 10px;
+    border-radius: 6px;
+  }
+
+div.container {
+  text-align: center;
+  padding: 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.img_card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h4 {
+  color: tan;
+  text-shadow: 1px 1px black;
+}
+
+h1 {
+  color: tan;
+  text-shadow: 1px 1px black;
+}

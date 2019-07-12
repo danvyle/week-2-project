@@ -1,11 +1,39 @@
+<%= stylesheet_link_tag "createrecipe.css" %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Create Edit Recipe</title>
+  </head>
+  <body class ="newrecipe">
+
+<div class="header">
+
+</div>
+
+
+<h1>Create Your Recipe</h1>
 <%= form_for @recipe do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %><br>
-<%= f.label "choose ingredients"%><br>
-<%= f.collection_check_boxes(:ingredient_ids, Ingredient.all, :id, :description) %>
-<%= f.label :image_url %>
-<%= f.text_field :image_url %><br>
-<%= f.label :source_url %>
-<%= f.text_field :source_url %><br>
-<%= f.submit %>
+  <%= f.label :"Name Your Recipe" %>
+  <%= f.text_field :title %><br>
+  <%= f.label "choose ingredients"%><br>
+
+  <div class="checkboxes">
+
+
+  <%= f.collection_check_boxes(:ingredient_ids, Ingredient.all, :id, :description) %>
+  <%= f.label :image_url %>
+
+  </div>
+
+  <%= f.text_field :image_url %><br>
+  <%= f.label :source_url %>
+  <%= f.text_field :source_url %><br>
+  <%= f.submit %>
 <% end %>
+
+
+
+
+</body>
+</html>

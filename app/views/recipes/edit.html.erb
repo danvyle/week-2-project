@@ -1,11 +1,53 @@
-<%= form_for @recipe do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %><br>
-<%= f.label "choose ingredients"%><br>
-<%= f.collection_check_boxes(:ingredient_ids, Ingredient.all, :id, :description) %>
-<%= f.label :image_url %>
-<%= f.text_field :image_url %><br>
-<%= f.label :source_url %>
-<%= f.text_field :source_url %><br>
-<%= f.submit %>
-<% end %>
+<%= stylesheet_link_tag "createrecipe.css" %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Create Edit Recipe</title>
+  </head>
+  <body class ="newrecipe">
+
+<div class="header">
+
+</div>
+
+
+<h1>Edit Your Recipe</h1>
+
+
+  <%= form_for @recipe do |f| %>
+
+  <div class="img_card">
+      <%= image_tag @recipe.image_url %>
+  </div>
+
+    <h4><%= f.label :"Edit Your Recipe Name" %></h4>
+    <%= f.text_field :title %><br>
+
+
+
+    <h4><%= f.label "choose ingredients"%><br></h4>
+
+    <div class="checkboxes">
+
+
+    <%= f.collection_check_boxes(:ingredient_ids, Ingredient.all, :id, :description) do |b| %>
+      <%= b.label(class: "label-checkbox") { b.check_box + b.text } %>
+    <% end %>
+
+    </div>
+
+    <h4><%= f.label :image_url %></h4>
+    <%= f.text_field :image_url %>
+
+    <h4><%= f.label :source_url %></h4>
+    <%= f.text_field :source_url %><br>
+
+    <%= f.submit %>
+  <% end %>
+
+
+
+
+</body>
+</html>

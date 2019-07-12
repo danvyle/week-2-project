@@ -18,44 +18,56 @@
 </div>
 
 
-
 <body>
-Hi <%= @user.username %>! <br>
+    <div class="content">
+      <div class="login-container">
+        <div class="login-form">
+          <h1 class="title">Hello! <%=@user.username%></h1>
+            <h4>You created : <%= @user.recipes.count %> recipes</h4>
+            <h4>Your Liked Recipes: <%= @user.likes.count %> </h4>
+            <h4>Your Favorite recipes: <%= @user.favorites.count %></h4>
+            <h4>Your Favorite Ingredients: <%= @user.ingredients.count %></h4>
 
-<h1>Here are your recipes:<%= @user.recipes.count %></h1>
-<% @user.recipes.each do |recipe| %>
-  <%= link_to recipe.title, recipe_path(recipe) %><br>
-<% end %>
-<br>
+            <p class="request-invite">
+              Change Password
+              <a href="login"> <%= link_to "Here!", edit_user_path(@user)%><br>
+              Delete Profile
+              <a href="menu-button"> <%=link_to "Here!", login_path, method: :delete %>
+            </p>
+        </div>
+      </div>
+    </div>
 
+  <div class="content">
+      <div class="login-container">
+        <div class="login-form">
+            <h4>Created recipes</h4>
+            <% @user.recipes.each do |recipe| %>
+              <%= link_to recipe.title, recipe_path(recipe) %><br>
+            <% end %>
 
-<h1>Your liked recipes: <%= @user.likes.count %> </h1>
-<% @user.likes.each do |like| %>
-  <% recipe = Recipe.find_by_id(like.recipe_id) %>
-  <%= link_to recipe.title, recipe_path(recipe) %><br>
-<% end %>
+            <h4>Liked recipe history :</h4>
+            <% @user.likes.each do |like| %>
+              <% recipe = Recipe.find_by_id(like.recipe_id) %>
+              <%= link_to recipe.title, recipe_path(recipe) %><br>
+            <% end %>
 
+            <h4>Favorite recipe history :</h4>
+            <% @user.favorites.each do |favorite| %>
+              <% recipe = Recipe.find_by_id(favorite.recipe_id) %>
+              <%= link_to recipe.title, recipe_path(recipe) %><br>
+            <% end %>
 
-<h1>Your faved recipes: <%= @user.favorites.count %></h1>
-<% @user.favorites.each do |favorite| %>
-  <% recipe = Recipe.find_by_id(favorite.recipe_id) %>
-  <%= link_to recipe.title, recipe_path(recipe) %><br>
-<% end %>
-
-
-<h1>Here are your ingredients to your favorited recipes!</h1>
-
-<% @user.favorites.each do |favorite| %>
-  <% recipe = Recipe.find_by_id(favorite.recipe_id) %>
-    <% recipe.ingredients.each do |item| %>
-      <%= item.description %><br>
-    <% end %>
-<% end %>
-
-
-<%= link_to "Change Password", edit_user_path(@user)%>
-<%= link_to "Log out", login_path, method: :delete %>
-<%= link_to "Delete", @user, method: :delete%>
+            <h4>Ingredient Shopping list :</h4>
+            <% @user.favorites.each do |favorite| %>
+              <% recipe = Recipe.find_by_id(favorite.recipe_id) %>
+                <% recipe.ingredients.each do |item| %>
+                  <li><%=item.description %></li><br>
+                <% end %>
+            <% end %>
+        </div>
+      </div>
+    </div>
 </body>
 
 

@@ -13,5 +13,5 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 Rails.application.config.assets.precompile += %w( recipes.css )
 Rails.application.config.assets.precompile += %w( users.css )
-Rails.application.config.assets.precompile += %w( login.css )
+Rails.application.config.assets.precompile += %w( usershow.css )
 Rails.application.config.assets.precompile += %w( recipeshow.css )

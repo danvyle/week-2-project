@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag "recipeshow.css" %>
+
 <body class="userlogin">
 <div class="header">
   <div class="header-container">
@@ -32,7 +34,3 @@
         </div>
 <%= button_to "Edit Recipe", edit_recipe_path(@recipe), :method => :get%>
 <%= button_to "Delete", @recipe, method: :delete%>
-
-
-
-

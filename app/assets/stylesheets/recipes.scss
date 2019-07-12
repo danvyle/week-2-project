@@ -16,16 +16,17 @@
     top: 0;
     background-color: white;
     min-height: 50px;
-    color: #FE422D;
+    color: tan;
     box-shadow: 0 0 10px;
-    opacity: 0.9;
+    opacity: 6px;
     border-radius: 6px;
 }
 
 .container_card {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
+  align-items: space-around;
+  
 }
 div.polaroid {
   width: 80%;
@@ -45,6 +46,9 @@ div.polaroid {
 div.container {
   text-align: center;
   padding: 10px 20px;
+  display: flex;
+  align-items: space-around;
+  justify-content: space-around;
 }
 
 div.polaroidrow2 {
@@ -65,4 +69,23 @@ div.polaroidrow2 {
 div.container {
   text-align: center;
   padding: 10px 20px;
+}
+
+.backgroundpic {
+  font-family: 'Helvetica Neue', Helvetica;
+  font-size: 14px;
+  font-style: 'Light';
+  line-height: 1.4;
+  background-image: url("background_picnic.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h2 {
+  text-align: center;
+  color: tan;
+  text-shadow: 1px 1px black;
+  
 }

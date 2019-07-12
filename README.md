@@ -1,25 +1,9 @@
 # README
 
-API Keys: API_KEY='ea1fdb321af9211004f4c16ceca8c9fd'
-API=KEY'f0a6e30fcf13978cb68ded50bb14bd43'
-API_KEY='63f0ac735276c8f1081b27b4f49a91db'
-API_KEY='5ba073d1aba03456f27965cabbb29817'
+This web application made by JR and Dan-Vy is called jr&vy: recipe keepers. This site is designed to crowdsource recipes from users and to search the web for recipes from other users.
 
+Users can like recipes to let other users know they like their contributions, and favorite recipes for when they'd like to try to make them later.
 
-def get_recipes(input)
-    recipe = RestClient.get("https://www.food2fork.com/api/search?key=#{API_KEY}&q=#{params[:q]}") #input by ingredient
-    parsed_recipes = JSON.parse(recipe)
+On their user profile, users can see how many likes and favorites their recipes have gotten, change their password, or create a shopping list for all their favorited recipes.
 
-    inputID = parsed_recipes["recipes"][0]["recipe_id"]
-
-    recipeID = RestClient.get("https://www.food2fork.com/api/get?key=#{API_KEY}&rId=#{inputID}")#input recipe id to look up ingredients
-    parsed_recipesID = JSON.parse(recipeID)
-
-    ingredientID = parsed_recipesID["recipe"]["ingredients"].join(",")
-    parsed_recipes["recipes"].each do |recipe|
-    recipe_1 = Recipe.new(name: recipe["title"], ingredients:ingredientID)
-    recipe_1.save
-
-    end
-end
-get_recipes
+Users can search for recipes or find inspiration looking for recipes that are the most favorited on the site.

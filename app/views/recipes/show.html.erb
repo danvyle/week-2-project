@@ -18,7 +18,7 @@
 <h4>Ingredients: <% @recipe.ingredients.each do |ingredient| %></h4>
 <%= ingredient.description %><br>
 <% end %>
-<h4>Click on picture to be taken to recipe!</h4>
+<h4>Click on picture to be taken to its recipe!</h4>
 <%= link_to @recipe.source_url do %>
     <%= image_tag @recipe.image_url%>
 <% end %>
@@ -27,12 +27,8 @@
 <%= @recipe.likes.count %> Likes
 <%= @recipe.favorites.count %> Favorites
         <div class="buttons">
-        <%= button_to "👍", recipe_likes_path(@recipe), method: :post %>
-        <%= button_to "😍", recipe_favorites_path(@recipe), method: :post %><br>
+        <%= button_to " 👍 ", recipe_likes_path(@recipe), method: :post %>
+        <%= button_to " 😍 ", recipe_favorites_path(@recipe), method: :post %><br>
         </div>
 <%= button_to "Edit Recipe", edit_recipe_path(@recipe), :method => :get%>
 <%= button_to "Delete", @recipe, method: :delete%>
-
-
-
-

@@ -7,16 +7,18 @@
     <title>Recipes</title>
   </head>
 
-
-    <body class="backgroundpic">
-    <div class="container">
-      <header>
-        <%= form_tag("/search") do %>
-          <%= label_tag(:q, "Search for:") %>
-          <%= text_field_tag(:q) %>
-          <%= submit_tag("Search") %>
-        <% end %><br>
-      </header>
+  <body class="backgroundpic">
+    <div class="header">
+      <div class="header-container">
+        <div class="menu-wrapper">
+              <%= form_tag("/search") do %>
+              <%= label_tag(:q, "Search for:") %>
+              <%= text_field_tag(:q) %>
+              <%= submit_tag("Search") %>
+              <% end %><br>
+        </div>
+      </div>
+    </div>
 
 <h2>Featured Recipe Results</h2>
         <div class="recipe_container_card">

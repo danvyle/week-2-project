@@ -7,12 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-60.times do
-  Like.create(user_id: (22..31).to_a.sample, recipe_id: (20..49).to_a.sample)
+100.times do
+  Like.create(user_id: (1..20).to_a.sample, recipe_id: (1..60).to_a.sample)
 end
 
-60.times do
-  Favorite.create(user_id: (22..31).to_a.sample, recipe_id: (20..49).to_a.sample)
+100.times do
+  Favorite.create(user_id: (1..20).to_a.sample, recipe_id: (1..60).to_a.sample)
 end
 
 # 10.times do
@@ -20,5 +20,11 @@ end
 # end
 
 200.times do
-  Ingredient.create(description: Faker::Food.ingredient, calorie: (50..200).to_a.sample, recipe_id: (22..49).to_a.sample)
+  Ingredient.create(description: Faker::Food.ingredient, calorie: (50..200).to_a.sample)
 end
+
+100.times do
+  IngredientsRecipe.create(ingredient_id: (1..200).to_a.sample, recipe_id: (1..60).to_a.sample)
+end
+
+

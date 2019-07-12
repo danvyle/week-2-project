@@ -16,14 +16,16 @@
     top: 0;
     background-color: white;
     min-height: 50px;
-    color: #FE422D;
+    color: tan;
     box-shadow: 0 0 10px;
+    opacity: 6px;
+    border-radius: 6px;
 }
 
 .fave_recipe_card {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
+  align-items: space-around;
 
 }
 div.polaroid {
@@ -42,6 +44,9 @@ div.polaroid {
 div.container {
   text-align: center;
   padding: 10px 20px;
+  display: flex;
+  align-items: space-around;
+  justify-content: space-around;
 }
 
 div.polaroidrow2 {
@@ -68,7 +73,6 @@ div.container {
   font-size: 14px;
   font-style: 'Light';
   line-height: 1.4;
-  weight: 100%;
   background-image: url("background_picnic.jpg");
   height: 100%;
   background-position: center;

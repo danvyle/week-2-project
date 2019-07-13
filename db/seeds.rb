@@ -6,25 +6,23 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+#
 100.times do
-  Like.create(user_id: (1..20).to_a.sample, recipe_id: (1..60).to_a.sample)
+  Like.create(user_id: (22..31).to_a.sample, recipe_id: (68..75).to_a.sample)
 end
 
 100.times do
-  Favorite.create(user_id: (1..20).to_a.sample, recipe_id: (1..60).to_a.sample)
+  Favorite.create(user_id: (22..31).to_a.sample, recipe_id: (68..75).to_a.sample)
 end
 
 # 10.times do
 #   Recipe.create(title: Faker::Food.dish, source_url: nil, image_url: nil, user_id: (22..31).to_a.sample)
 # end
-
+#
 200.times do
   Ingredient.create(description: Faker::Food.ingredient, calorie: (50..200).to_a.sample)
 end
 
 100.times do
-  IngredientsRecipe.create(ingredient_id: (1..200).to_a.sample, recipe_id: (1..60).to_a.sample)
+  IngredientsRecipe.create(ingredient_id: (1..200).to_a.sample, recipe_id: (1..16).to_a.sample)
 end
-
-

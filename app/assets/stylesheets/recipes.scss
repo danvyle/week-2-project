@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.menu-wrapper > * {
+  padding: 0 10px 0 10px;
+}
+
+.header_logo img {
+  height: 35px;
+  width: 35px;
+}
 
 .container {
   display: grid;

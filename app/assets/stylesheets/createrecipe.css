@@ -1,3 +1,8 @@
+.header_logo img {
+  height: 35px;
+  width: 35px;
+}
+
 .header {
     z-index: 50;
     width: 100%;
@@ -10,7 +15,6 @@
     opacity: 6px;
     border-radius: 6px;
 }
-
 .checkboxes {
   padding: 30px;
   display: grid;

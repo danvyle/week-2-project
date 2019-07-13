@@ -1,6 +1,10 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.header_logo img {
+  height: 35px;
+  width: 35px;
+}
 
 .header {
     z-index: 50;
@@ -9,7 +13,7 @@
     top: 0;
     background-color: white;
     min-height: 50px;
-    color: #FE422D;
+    color: tan;
     box-shadow: 0 0 10px;
     opacity: 0.9;
     border-radius: 6px;
@@ -23,6 +27,11 @@
     position: relative;
     z-index: 1;
     border-radius: 10px;
+}
+
+.header_logo img {
+  height: 35px;
+  width: 35px;
 }
 
 .menu-wrapper {
@@ -99,31 +108,44 @@ clear: both;
 }
 
 .recipe-cards {
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: space-around;
+  padding: 10px;
+  width: 100%;
 }
 
 
 .user_recipes {
-
+  background-color: white;
+  border-radius: 8px;
+  text-align: center;
+  opacity: 0.8;
+  padding: 10px;
+  min-width: 30%;
 }
 
 .liked_favorited_recipes {
-
+  background-color: white;
+  border-radius: 8px;
+  text-align: center;
+  opacity: 0.8;
+  padding: 10px;
+  min-width: 30%;
 }
 
 .ingredient_list {
-
+  background-color: white;
+  border-radius: 8px;
+  text-align: center;
+  opacity: 0.8;
+  padding: 10px;
+  min-width: 30%;
 }
 
 .user_info-container {
   background: none;
-  padding: 0;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  min-height: calc(100vh - 60px);
+  padding: 10px;
+  height: -70px;
 }

@@ -6,16 +6,32 @@
     <meta charset="utf-8">
     <title>Recipes</title>
   </head>
-
   <body class="backgroundpic">
     <div class="header">
       <div class="header-container">
+        <div class="header_logo">
+          <%=image_tag("smalllogo.png")%>
+        </div>
         <div class="menu-wrapper">
-              <%= form_tag("/search") do %>
-              <%= label_tag(:q, "Search for:") %>
-              <%= text_field_tag(:q) %>
-              <%= submit_tag("Search") %>
-              <% end %><br>
+          <a class="menu-button" href="/recipes">
+            <i class="fa fa-sign-in fa-2x visible-xs"></i>
+            <span class="hidden-xs">Home</span>
+          </a>
+          <a class="menu-button" href="/recipes/new">
+            <i class="fa fa-sign-in fa-2x visible-xs"></i>
+            <span class="hidden-xs">New Recipe</span>
+          </a>
+          <a class="menu-button" href="/users/<%= current_user.id %>">
+            <i class="fa fa-sign-in fa-2x visible-xs"></i>
+            <span class="hidden-xs">Profile</span>
+          </a>
+          <a class="menu-button" <%= link_to "Log out", login_path(@user), method: :delete %>
+          </a>
+          <%= form_tag("/search") do %>
+                <%= label_tag(:q, "Search for:") %>
+                <%= text_field_tag(:q) %>
+                <%= submit_tag("Search") %>
+                <% end %><br>
         </div>
       </div>
     </div>
@@ -32,9 +48,9 @@
         </div>
           <%end%><br>
         </div>
-    </div>
 
-    <h2>Most Favorited Recipe</h2>
+
+    <h2>Most Liked Recipes</h2>
       <div class="container_card">
         <% Recipe.most_likes.each do |recipe| %>
       <div class="polaroidrow2">

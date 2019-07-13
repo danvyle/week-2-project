@@ -22,7 +22,7 @@
     <div class="content">
       <div class="user_info-container">
         <div class="login-form">
-          <h1 class="title">Hello! <%=@user.username%></h1>
+          <h1 class="title">Hello, <%=@user.username.capitalize%>!</h1>
             <h4>You created : <%= @user.recipes.count %> recipes</h4>
             <h4>Your Liked Recipes: <%= @user.likes.count %> </h4>
             <h4>Your Favorite recipes: <%= @user.favorites.count %></h4>

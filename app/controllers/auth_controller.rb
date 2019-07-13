@@ -7,7 +7,7 @@ class AuthController < ApplicationController
     user = User.find_by(username: params[:auth][:username])
     if user && user.authenticate(params[:auth][:password])
       session[:user_id] = user.id
-      log_in user
+      log_in(user)
       redirect_to user_path(user)
     else
       flash.now[:danger] = 'Invalid email/password combination'
